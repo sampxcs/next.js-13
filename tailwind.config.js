@@ -3,16 +3,35 @@ module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        black: '#101010',
+        'light-black': '#16181c'
       },
-    },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 }
+        },
+        fadeInDown: {
+          '0%': { opacity: 0, transform: 'translateY(-0.5rem)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' }
+        },
+        fadeInUp: {
+          '0%': { opacity: 0, transform: 'translateY(0.5rem)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' }
+        }
+      },
+      animation: {
+        fadeIn: 'fadeIn .3s ease-in-out forwards',
+        fadeInDown: 'fadeInDown .3s ease-in-out forwards',
+        fadeInUp: 'fadeInUp .3s ease-in-out forwards'
+      }
+    }
   },
-  plugins: [],
+  darkMode: ['class'],
+  plugins: []
 }
