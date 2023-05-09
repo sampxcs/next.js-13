@@ -39,7 +39,7 @@ export default function Page () {
             <ButtonToggleMode />
           </li>
           <li className='flex items-center justify-center'>
-            <Link href='https://github.com/sampxcs' target='_blank' className='transition-opacity hover:opacity-80'>
+            <Link href='https://github.com/sampxcs/next.js-13' target='_blank' className='transition-opacity hover:opacity-80'>
               <Github width='1.5rem' />
             </Link>
           </li>

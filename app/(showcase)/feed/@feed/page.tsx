@@ -1,12 +1,19 @@
-import Article from '../../components/Article'
+'use client'
+
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
+
 import { getPosts } from '@/services/getPosts'
 import { getUsers } from '@/services/getUsers'
 import { getGifs } from '@/services/getGifs'
 
+import Article from '../../components/Article'
+
 export default async function Page () {
+  const params = useSearchParams()
+  const query = params.get('search')
   const postsContents = await getPosts()
-  const postsGifts = await getGifs()
+  const postsGifts = await getGifs(query || 'developer')
   const users = await getUsers()
 
   const posts = postsContents.slice(0, 50).map((post: any) => {
