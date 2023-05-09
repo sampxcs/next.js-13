@@ -3,7 +3,7 @@ import { getUserById } from '@/services/getUserById'
 import { getGifs } from '@/services/getGifs'
 import { getPostById } from '@/services/getPostById'
 
-export default async function Default ({ params }:any) {
+export default async function Page ({ params }:any) {
   const { id } = params
   const postContent = await getPostById(id)
   const postsGifts = await getGifs()
@@ -16,9 +16,9 @@ export default async function Default ({ params }:any) {
   }
 
   return (
-    <>
+    <div className='flex flex-col gap-4 p-4 bg-light-black rounded-2xl'>
       {/* @ts-expect-error Async Server Component */}
       <Profile {...post} />
-    </>
+    </div>
   )
 }

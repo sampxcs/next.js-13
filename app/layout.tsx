@@ -12,9 +12,14 @@ export default function RootLayout ({ children, header }: any) {
   return (
     <html lang='en' className='dark'>
       <body className={`${inter.className} text-black dark:bg-black dark:text-white`}>
-        <marquee className='text-sm py-1 bg-gradient-to-r text-white from-cyan-500 to-blue-500'>This app was developed by sampxcs for experimental purposes to test the features of the new version of next.js 13. With the App Router (beta)</marquee>
+        <div className='relative text-sm h-8 py-1 overflow-hidden bg-gradient-to-r text-white from-cyan-500 to-blue-500'>
+          <div className='block absolute w-[200%] overflow-hidden animate-marquee'>
+            <span className='float-left w-1/2'> This app was developed by sampxcs for experimental purposes to test the features of the new version of next.js 13. With the App Router</span>
+            <span className='float-left w-1/2'> This app was developed by sampxcs for experimental purposes to test the features of the new version of next.js 13. With the App Router</span>
+          </div>
+        </div>
         {header}
-        <main className='flex flex-col items-center justify-between max-w-screen-xl mx-auto p-6'>
+        <main className='flex flex-col items-center justify-between max-w-screen-2xl mx-auto p-6'>
           {children}
         </main>
       </body>

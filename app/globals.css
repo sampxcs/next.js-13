@@ -1,4 +1,6 @@
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 *::-webkit-scrollbar {
   width: .5rem;
@@ -13,8 +15,8 @@
   border-radius: .5rem;
 }
 *:hover::-webkit-scrollbar-thumb {
-  background-color: #424242
+  background-color: #242424;
 }
-
-@tailwind components;
-@tailwind utilities;
+body::-webkit-scrollbar-thumb {
+  background-color: #242424;
+}
